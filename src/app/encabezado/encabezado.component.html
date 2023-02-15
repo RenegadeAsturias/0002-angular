@@ -1,10 +1,19 @@
+<!-- Con rutas que se bajan todos los objetos en cada petición 
 <ul>
     <li><a href="/">Inicio</a></li>
     <li><a href="/lista-libros">Lista de libros</a></li>
     <li><a href="/acerca-de">Acerca de</a></li>
 </ul>
+-->
 <ul>
     <li><a [routerLink]="['/']">Inicio Async</a></li>
     <li><a [routerLink]="['/lista-libros']">Lista de libros Async</a></li>
     <li><a [routerLink]="['/acerca-de']">Acerca de Async</a></li>
 </ul>
+
+<div clas="misLibros" *ngIf="servicioLibrosSeleccionados.mostrarLibros()">
+	<h2>Listado de libros visitados...</h2>
+	<ul>
+		<li *ngFor="let libro of servicioLibrosSeleccionados.getLibros()">{{libro.titulo}}</li>
+	</ul>
+</div>

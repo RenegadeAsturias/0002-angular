@@ -11,6 +11,8 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { Error404Component } from './error404/error404.component';
 import { DetallesComponent } from './detalles/detalles.component';
 
+import { LibrosSeleccionadosService } from './libros-seleccionados.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { DetallesComponent } from './detalles/detalles.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    LibrosSeleccionadosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Libro } from './Libro';
 
+import { LibrosSeleccionadosService } from '../libros-seleccionados.service';
+
 @Component({
   selector: 'app-lista-de-libros',
   templateUrl: './lista-de-libros.component.html',
@@ -10,12 +12,14 @@ export class ListaDeLibrosComponent {
 
   libros:Array<Libro>;
 
-  constructor() {
+  constructor(public servicioSeleccionarLibros:LibrosSeleccionadosService) {
+
     this.libros = [
       {id:1, titulo:'Lunes al sol', tematica:'Ciencia', precio:25 },
       {id:2, titulo:'Martes al sol', tematica:'Misterio', precio:28 },
       {id:3, titulo:'Miércoles al sol', tematica:'Humor', precio:30 },
-    ]
+    ];
+
   }
 
 }

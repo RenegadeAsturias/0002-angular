@@ -1,8 +1,10 @@
+<p>Listado de libros disponibles... (haga clic para ver su detalle)</p>
 <div class="container">
 	<ul>
 		<li *ngFor="let libro of libros">
 			<!-- <a [routerLink]="['/detalles']"> {{libro.titulo}} </a> -->
-			<a [routerLink]="['/detalles', libro.id]"> {{libro.titulo}} </a> 
+			<a  (click)="servicioSeleccionarLibros.agregarLibroSeleccionado(libro)"
+				[routerLink]="['/detalles', libro.id]" > {{libro.titulo}} </a>
 		</li>
 	</ul>
 </div>
